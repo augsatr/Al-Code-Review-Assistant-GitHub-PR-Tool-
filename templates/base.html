@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Code Review Assistant{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="/" class="nav-brand">AI Code Review Assistant</a>
+            <span class="nav-tag">GitHub PR Analyzer</span>
+        </div>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>AI Code Review Assistant &mdash; Analyzes GitHub Pull Requests for code quality, security, performance, and best practices.</p>
+        </div>
+    </footer>
+</body>
+</html>

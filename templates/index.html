@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Review a Pull Request{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>Review a Pull Request</h2>
+    <form action="/review" method="POST">
+        <div class="form-group">
+            <label for="pr_url">GitHub PR URL</label>
+            <input type="text" id="pr_url" name="pr_url"
+                   placeholder="https://github.com/owner/repo/pull/123"
+                   required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="token">GitHub Token <small>(optional — for private repos)</small></label>
+            <input type="password" id="token" name="token"
+                   placeholder="ghp_... or leave blank for public repos">
+        </div>
+        <button type="submit" class="btn">Analyze PR</button>
+    </form>
+</div>
+<div class="features">
+    <div class="feature"><strong>🔍 Security</strong> — SQLi, XSS, hardcoded secrets, injection risks</div>
+    <div class="feature"><strong>⚡ Performance</strong> — inefficient patterns, blocking calls, memory issues</div>
+    <div class="feature"><strong>🧹 Code Quality</strong> — naming, complexity, dead code, style violations</div>
+    <div class="feature"><strong>🛡️ Error Handling</strong> — missing try/catch, bare excepts, edge cases</div>
+</div>
+{% endblock %}

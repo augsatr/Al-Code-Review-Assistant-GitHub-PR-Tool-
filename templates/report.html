@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Review Results — {{ pr.repo_full }} #{{ pr.pr_number }}{% endblock %}
+{% block content %}
+<div class="report-header">
+    <h2>{{ pr.repo_full }} #{{ pr.pr_number }}</h2>
+    <p class="pr-title">{{ pr.title }}</p>
+    <p class="pr-meta">by <strong>{{ pr.author }}</strong> &mdash; {{ pr.base_branch }} ← {{ pr.head_branch }}</p>
+    <div class="score-badge" data-score="{{ report.score }}">{{ report.score }}/100</div>
+    <p class="summary">{{ report.summary }}</p>
+</div>
+
+{% if report.strengths %}
+<div class="section strengths">
+    <h3>✅ Strengths</h3>
+    <ul>{% for s in report.strengths %}<li>{{ s }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+
+{% if report.comments %}
+<div class="section issues">
+    <h3>Issues Found ({{ report.comments|length }})</h3>
+    {% for c in report.comments %}
+    <div class="issue issue-{{ c.severity }}">
+        <div class="issue-header">
+            <span class="severity-tag tag-{{ c.severity }}">{{ c.severity }}</span>
+            <strong>{{ c.title }}</strong>
+            <span class="issue-location">{{ c.file }}:{{ c.line }}</span>
+        </div>
+        <p class="issue-category">{{ c.category }}</p>
+        <p class="issue-desc">{{ c.description }}</p>
+        <div class="issue-suggestion">
+            <strong>💡 Suggestion:</strong> {{ c.suggestion }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="section">
+    <p class="no-issues">No issues found. Great work! 🎉</p>
+</div>
+{% endif %}
+
+<a href="/" class="btn btn-secondary">Review another PR</a>
+{% endblock %}

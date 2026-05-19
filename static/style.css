@@ -1,0 +1,72 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+a { color: #58a6ff; }
+
+/* Nav */
+.nav { background: #161b22; padding: 16px 0; border-bottom: 1px solid #30363d; }
+.nav .container { display: flex; align-items: center; gap: 16px; }
+.nav-brand { font-size: 1.25rem; font-weight: 700; color: #f0f6fc; text-decoration: none; }
+.nav-tag { font-size: 0.8rem; color: #8b949e; }
+
+/* Main */
+main { padding: 40px 0; min-height: calc(100vh - 160px); }
+
+/* Card */
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 32px; margin-bottom: 24px; }
+.card h2 { margin-bottom: 20px; font-size: 1.5rem; }
+
+/* Form */
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 6px; color: #c9d1d9; font-size: 1rem; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: #58a6ff; }
+.form-group small { color: #8b949e; }
+.btn { display: inline-block; padding: 10px 24px; background: #238636; color: #fff; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.btn:hover { background: #2ea043; }
+.btn-secondary { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; margin-top: 16px; }
+.btn-secondary:hover { background: #30363d; }
+
+/* Features */
+.features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+.feature { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; font-size: 0.9rem; }
+
+/* Report */
+.report-header { margin-bottom: 24px; }
+.pr-title { font-size: 1.2rem; color: #f0f6fc; margin: 8px 0; }
+.pr-meta { color: #8b949e; font-size: 0.9rem; }
+.summary { color: #8b949e; margin-top: 8px; }
+.score-badge { display: inline-block; padding: 8px 20px; border-radius: 20px; font-size: 1.5rem; font-weight: 700; margin: 12px 0; background: #1f6feb; color: #fff; }
+.score-badge[data-score="100"] { background: #238636; }
+.score-badge[data-score]:where([data-score]>="80") { background: #238636; }
+.score-badge[data-score]:where([data-score]>="50"):where([data-score]<"80") { background: #d29922; }
+.score-badge[data-score]:where([data-score]<"50") { background: #da3633; }
+
+.section { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+.section h3 { margin-bottom: 16px; font-size: 1.1rem; }
+
+.strengths ul { list-style: none; }
+.strengths li { padding: 4px 0; color: #7ee787; }
+
+.issue { border: 1px solid #30363d; border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+.issue-critical { border-left: 4px solid #da3633; }
+.issue-warning { border-left: 4px solid #d29922; }
+.issue-info { border-left: 4px solid #58a6ff; }
+.issue-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.issue-header strong { flex: 1; }
+.issue-location { color: #8b949e; font-size: 0.85rem; font-family: monospace; }
+.issue-category { font-size: 0.8rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.issue-desc { margin-bottom: 8px; }
+.issue-suggestion { background: #0d1117; padding: 10px 12px; border-radius: 6px; font-size: 0.9rem; border: 1px solid #21262d; }
+.severity-tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: #da3633; color: #fff; }
+.tag-warning { background: #d29922; color: #000; }
+.tag-info { background: #1f6feb; color: #fff; }
+
+.no-issues { color: #7ee787; font-size: 1.1rem; text-align: center; padding: 20px; }
+
+.error-card p { color: #f85149; margin-bottom: 16px; }
+
+.footer { text-align: center; padding: 24px 0; color: #8b949e; font-size: 0.85rem; border-top: 1px solid #30363d; }
+
+@media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
